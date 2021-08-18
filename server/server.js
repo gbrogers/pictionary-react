@@ -4,17 +4,17 @@ const ctrl = require("./controller/controller.js");
 
 const app = express();
 
-app.use(express.static("public"));
 const path = require("path");
+app.use(express.static(path.join(__dirname, "build")));
 
 app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public"));
+  res.sendFile(path.join(__dirname, "build", "../public"));
 });
 
-app.get("/api/getwords/:id", ctrl.getWords);
+app.get("/api/getwords/:difficulty", ctrl.getWords);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {

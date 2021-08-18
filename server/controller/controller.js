@@ -3,10 +3,10 @@ const words = require("../db.json");
 module.exports = {
   getWords: (req, res) => {
     console.log(req);
-    const { id } = req.params;
+    const { difficulty } = req.params;
     const rightWords = words.filter((item) => {
-      item.difficulty === id;
+      item.difficulty === difficulty;
     });
-    res.status(200).send(rightWords);
+    return res.status(200).send(rightWords);
   },
 };
