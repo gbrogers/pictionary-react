@@ -11,7 +11,7 @@ function App() {
   const generateWords = (difficulty) => {
     console.log("in generateWords");
     axios
-      .get(`/api/getwords/?difficulty=${difficulty}`)
+      .get(`http://localhost:3001/api/getwords/?difficulty=${difficulty}`)
       .then((res) => {
         console.log(res.data);
         // setData(res.data);
