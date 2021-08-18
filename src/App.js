@@ -13,28 +13,11 @@ function App() {
     axios
       .get(`/api/getwords/?difficulty=${difficulty}`)
       .then((res) => {
-        let words = [];
         console.log(res.data);
-        // const rightWords = res.data.filter(
-        //   (item) => item.difficulty === difficulty
-        // );
-        // rightWords.map((spot) => {
-        //   words.push(spot.word);
-        // });
-        // setData(data);
+        // setData(res.data);
       })
       .catch((error) => console.log(error));
   };
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${baseURL}/words/?difficulty=${difficulty}`)
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setData(data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
 
   return (
     <div>

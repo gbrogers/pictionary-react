@@ -4,9 +4,13 @@ module.exports = {
   getWords: (req, res) => {
     console.log(req);
     const { difficulty } = req.params;
-    const rightWords = words.filter((item) => {
-      item.difficulty === difficulty;
+    let wordArray = [];
+    words.map((item) => {
+      if (item.difficulty === difficulty) {
+        wordArray.push(item.word);
+      }
+      let oneWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     });
-    return res.status(200).send(rightWords);
+    return res.status(200).send(oneWord);
   },
 };
