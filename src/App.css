@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* APP */
+
+.easy {
+  background-color: rgb(175, 238, 175);
+}
+.medium {
+  background-color: rgb(226, 238, 175);
+}
+.hard {
+  background-color: rgb(250, 117, 146);
+}
