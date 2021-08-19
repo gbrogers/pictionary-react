@@ -3,7 +3,8 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 // import data from "./services/useRequest";
 // import GenerateWords from "./GenerateWord";
-
+// require("dotenv").config();
+// const port = process.env.PORT;
 function App() {
   const [difficulty, setDifficulty] = useState();
   const [data, setData] = useState();
@@ -11,7 +12,7 @@ function App() {
   const generateWords = (difficulty) => {
     console.log("in generateWords");
     axios
-      .get(`/api/getwords/?difficulty=${difficulty}`)
+      .get(`/api/getwords/${difficulty}`)
       .then((res) => {
         console.log(res.data);
         // setData(res.data);
