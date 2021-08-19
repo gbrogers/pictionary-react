@@ -16,7 +16,8 @@ app.get("/", (req, res) => {
 
 app.get("/api/getwords/:difficulty", ctrl.getWords);
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 5555;
+// const port = 5555;
 app.listen(port, () => {
   console.log(`You are running server on port ${port}`);
 });
