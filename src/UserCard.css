@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 1px solid hotpink;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.wordCard {
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90%;
+  max-width: 500px;
+  padding: 40px 20px;
+  border: rgb(20, 188, 240) solid 10px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+h3 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.easy {
+  color: rgb(0, 218, 0);
+}
+.medium {
+  color: rgb(243, 28, 243);
+}
+.hard {
+  color: rgb(223, 0, 48);
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    background-color: lightblue;
+  }
+  .wordContent {
+    width: 80%;
+  }
+  .wordCard {
+    width: 70%;
+  }
+}
