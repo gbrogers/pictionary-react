@@ -1,13 +1,11 @@
 import "./App.css";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
-// import data from "./services/useRequest";
-// import GenerateWords from "./GenerateWord";
-// require("dotenv").config();
-// const port = process.env.PORT;
+import React, { useState } from "react";
+import UserCard from "./UserCard";
+
 function App() {
   const [difficulty, setDifficulty] = useState();
-  const [data, setData] = useState();
+  const [word, setWord] = useState();
 
   const generateWords = (difficulty) => {
     console.log("in generateWords");
@@ -15,7 +13,7 @@ function App() {
       .get(`/api/getwords/${difficulty}`)
       .then((res) => {
         console.log(res.data);
-        // setData(res.data);
+        setWord(res.data);
       })
       .catch((error) => console.log(error));
   };
@@ -25,9 +23,9 @@ function App() {
       <header>
         <h1>Pictionary Word Generator</h1>
       </header>
-
-      <fieldset>
-        <legend>Set-Up</legend>
+      <body>
+        {/* <fieldset> */}
+        {/* <legend>Set-Up</legend> */}
         <label htmlFor="difficulty">Choose a Difficulty</label>
         <select
           onChange={(e) => setDifficulty(e.target.value)}
@@ -35,16 +33,28 @@ function App() {
           type="dropdown"
           value={difficulty}
         >
-          <option value="">Any Difficulty</option>
+          <option value="">Select</option>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
-        <button onClick={() => generateWords(difficulty)}>
-          Generate Words
-        </button>
-        {/* <button onClick={() => console.log(difficulty)}>Generate Words</button> */}
-      </fieldset>
+        <div className="nextContainer">
+          <button
+            className="generateWord"
+            onClick={() => generateWords(difficulty)}
+          >
+            Generate Words
+          </button>
+        </div>
+        {/* </fieldset> */}
+
+        <UserCard word={word} difficulty={difficulty} />
+        <div className="nextContainer">
+          <button className="newWord" onClick={() => generateWords(difficulty)}>
+            New Word
+          </button>
+        </div>
+      </body>
     </div>
   );
 }
