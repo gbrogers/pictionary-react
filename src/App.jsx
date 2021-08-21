@@ -19,34 +19,35 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="body">
       <header>
         <h1>Pictionary Word Generator</h1>
       </header>
       <body>
-        {/* <fieldset> */}
-        {/* <legend>Set-Up</legend> */}
-        <label htmlFor="difficulty">Choose a Difficulty</label>
-        <select
-          onChange={(e) => setDifficulty(e.target.value)}
-          id="difficulty"
-          type="dropdown"
-          value={difficulty}
-        >
-          <option value="">Select</option>
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-        <div className="nextContainer">
-          <button
-            className="generateWord"
-            onClick={() => generateWords(difficulty)}
-          >
-            Generate Words
-          </button>
+        <div className="setup">
+          <div>
+            <label htmlFor="difficulty">Choose a Difficulty:</label>
+            <select
+              onChange={(e) => setDifficulty(e.target.value)}
+              id="difficulty"
+              type="dropdown"
+              value={difficulty}
+            >
+              <option value="">Select</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+          <div className="nextContainer">
+            <button
+              className="generateWord"
+              onClick={() => generateWords(difficulty)}
+            >
+              Generate Words
+            </button>
+          </div>
         </div>
-        {/* </fieldset> */}
 
         <UserCard word={word} difficulty={difficulty} />
         <div className="nextContainer">

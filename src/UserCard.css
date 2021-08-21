@@ -10,7 +10,7 @@
   justify-content: center;
 }
 .wordCard {
-  background-color: rgb(228, 228, 228);
+  background-color: #e4c9eb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
   width: 90%;
   max-width: 500px;
   padding: 40px 20px;
-  border: rgb(20, 188, 240) solid 10px;
+  /* border: rgb(20, 188, 240) solid 10px; */
   border-radius: 5px;
 }
 
@@ -32,19 +32,22 @@ h3 {
 }
 
 .easy {
-  color: rgb(0, 218, 0);
+  color: rgb(0, 104, 0);
+  font-weight: 700;
 }
 .medium {
   color: rgb(243, 28, 243);
+  font-weight: 700;
 }
 .hard {
   color: rgb(223, 0, 48);
+  font-weight: 700;
 }
 
 @media screen and (min-width: 400px) {
-  body {
+  /* body {
     background-color: lightblue;
-  }
+  } */
   .wordContent {
     width: 80%;
   }
