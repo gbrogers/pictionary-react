@@ -1,12 +1,24 @@
 import "./App.css";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UserCard from "./UserCard";
+import Timer from "./Timer";
 
 function App() {
   const [difficulty, setDifficulty] = useState();
   const [word, setWord] = useState();
   const [toggleDifficulty, setToggleDifficulty] = useState(false);
+
+  // const [sendRequest, setSendRequest] = useState(false);
+  const [toggleTimer, setToggleTimer] = useState(false);
+
+  // useEffect(() => {
+  //   if (seconds > 0) {
+  //     setTimeout(() => setSeconds(seconds - 1), 1000);
+  //   } else {
+  //     setSeconds("Times Up!");
+  //   }
+  // }, [sendRequest]);
 
   const generateWords = (difficulty) => {
     console.log("in generateWords");
@@ -44,7 +56,10 @@ function App() {
           <div className="nextContainer">
             <button
               className="generateWord"
-              onClick={() => generateWords(difficulty)}
+              onClick={() => {
+                generateWords(difficulty);
+                setToggleTimer(true);
+              }}
             >
               Generate Words
             </button>
@@ -52,12 +67,14 @@ function App() {
         </div>
 
         {toggleDifficulty && <UserCard word={word} difficulty={difficulty} />}
-
+        {toggleTimer && <Timer />}
         {toggleDifficulty && (
           <div className="nextContainer">
             <button
               className="newWord"
-              onClick={() => generateWords(difficulty)}
+              onClick={() => {
+                generateWords(difficulty);
+              }}
             >
               New Word
             </button>

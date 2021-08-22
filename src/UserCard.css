@@ -8,6 +8,7 @@
 .container {
   display: flex;
   justify-content: center;
+  color: #1f1d2c;
 }
 .wordCard {
   background-color: #e4c9eb;
@@ -18,7 +19,6 @@
   width: 90%;
   max-width: 500px;
   padding: 40px 20px;
-  /* border: rgb(20, 188, 240) solid 10px; */
   border-radius: 5px;
 }
 

@@ -42,10 +42,14 @@ h1 {
   background-color: #dcacfa;
   border: none;
   border-radius: 5px;
+  color: #1f1d2c;
 }
 select {
   margin-left: 10px;
+  font-size: 15px;
+  border-radius: 5px;
 }
+
 label {
   color: #e4c9eb;
 }
