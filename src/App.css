@@ -8,10 +8,10 @@ background-color: #E4C9EB;
  */
 
 header {
-  /* height: 75px; */
   background-color: #1f1d2c;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 body {
   background-color: #2c293f;
@@ -51,7 +51,6 @@ label {
 }
 .generateWord {
   margin: 10px;
-  /* background-color: #dcacfa; */
   background-color: #1f1d2c;
   color: #e4c9eb;
   border: none;
