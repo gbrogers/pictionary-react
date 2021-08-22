@@ -9,7 +9,6 @@ function App() {
   const [word, setWord] = useState();
   const [toggleDifficulty, setToggleDifficulty] = useState(false);
 
-  // const [sendRequest, setSendRequest] = useState(false);
   const [toggleTimer, setToggleTimer] = useState(false);
 
   // useEffect(() => {
