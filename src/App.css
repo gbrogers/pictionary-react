@@ -51,7 +51,9 @@ label {
 }
 .generateWord {
   margin: 10px;
-  background-color: #dcacfa;
+  /* background-color: #dcacfa; */
+  background-color: #1f1d2c;
+  color: #e4c9eb;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -64,5 +66,6 @@ button:hover {
 @media screen and (min-width: 400px) {
   .newWord {
     width: 65%;
+    max-width: 400px;
   }
 }

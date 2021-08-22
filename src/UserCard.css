@@ -48,10 +48,9 @@ h3 {
   /* body {
     background-color: lightblue;
   } */
-  .wordContent {
-    width: 80%;
-  }
+
   .wordCard {
     width: 70%;
+    max-width: 410px;
   }
 }

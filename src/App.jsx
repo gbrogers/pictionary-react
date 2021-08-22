@@ -6,12 +6,14 @@ import UserCard from "./UserCard";
 function App() {
   const [difficulty, setDifficulty] = useState();
   const [word, setWord] = useState();
+  const [toggleDifficulty, setToggleDifficulty] = useState(false);
 
   const generateWords = (difficulty) => {
     console.log("in generateWords");
     axios
       .get(`/api/getwords/${difficulty}`)
       .then((res) => {
+        setToggleDifficulty(true);
         console.log(res.data);
         setWord(res.data);
       })
@@ -49,12 +51,18 @@ function App() {
           </div>
         </div>
 
-        <UserCard word={word} difficulty={difficulty} />
-        <div className="nextContainer">
-          <button className="newWord" onClick={() => generateWords(difficulty)}>
-            New Word
-          </button>
-        </div>
+        {toggleDifficulty && <UserCard word={word} difficulty={difficulty} />}
+
+        {toggleDifficulty && (
+          <div className="nextContainer">
+            <button
+              className="newWord"
+              onClick={() => generateWords(difficulty)}
+            >
+              New Word
+            </button>
+          </div>
+        )}
       </body>
     </div>
   );
