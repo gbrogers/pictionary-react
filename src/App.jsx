@@ -10,15 +10,6 @@ function App() {
   const [toggleDifficulty, setToggleDifficulty] = useState(false);
 
   const [toggleTimer, setToggleTimer] = useState(false);
-  const [countdown, setCountdown] = useState(false);
-
-  // useEffect(() => {
-  //   if (seconds > 0) {
-  //     setTimeout(() => setSeconds(seconds - 1), 1000);
-  //   } else {
-  //     setSeconds("Times Up!");
-  //   }
-  // }, [sendRequest]);
 
   const generateWords = (difficulty) => {
     console.log("in generateWords");
@@ -33,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="body">
+    <>
       <header>
         <h1>Pictionary Word Generator</h1>
       </header>
@@ -59,7 +50,6 @@ function App() {
               onClick={() => {
                 generateWords(difficulty);
                 setToggleTimer(true);
-                setCountdown(true);
               }}
             >
               Generate Words
@@ -68,16 +58,14 @@ function App() {
         </div>
 
         {toggleDifficulty && <UserCard word={word} difficulty={difficulty} />}
-        {toggleTimer && (
-          <Timer setCountdown={setCountdown} countdown={countdown} />
-        )}
+        {toggleTimer && <Timer />}
         {toggleDifficulty && (
           <div className="nextContainer">
             <button
               className="newWord"
               onClick={() => {
                 generateWords(difficulty);
-                setCountdown(true);
+                setToggleTimer(true);
               }}
             >
               New Word
@@ -85,7 +73,7 @@ function App() {
           </div>
         )}
       </body>
-    </div>
+    </>
   );
 }
 
