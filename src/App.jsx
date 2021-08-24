@@ -10,6 +10,7 @@ function App() {
   const [toggleDifficulty, setToggleDifficulty] = useState(false);
 
   const [toggleTimer, setToggleTimer] = useState(false);
+  const [countdown, setCountdown] = useState(false);
 
   // useEffect(() => {
   //   if (seconds > 0) {
@@ -58,6 +59,7 @@ function App() {
               onClick={() => {
                 generateWords(difficulty);
                 setToggleTimer(true);
+                setCountdown(true);
               }}
             >
               Generate Words
@@ -66,13 +68,16 @@ function App() {
         </div>
 
         {toggleDifficulty && <UserCard word={word} difficulty={difficulty} />}
-        {toggleTimer && <Timer />}
+        {toggleTimer && (
+          <Timer setCountdown={setCountdown} countdown={countdown} />
+        )}
         {toggleDifficulty && (
           <div className="nextContainer">
             <button
               className="newWord"
               onClick={() => {
                 generateWords(difficulty);
+                setCountdown(true);
               }}
             >
               New Word
