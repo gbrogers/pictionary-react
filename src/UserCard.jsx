@@ -1,16 +1,17 @@
-import "./UserCard.css";
+import styles from "./UserCard.module.scss";
 
 function UserCard(props) {
   const { word, difficulty } = props;
 
   return (
-    <div className="container">
-      <div className="wordCard">
+    <div className={styles.container}>
+      <div className={styles.wordCard}>
         <div>
           <h2>{word}</h2>
         </div>
         <h3>
-          Word Difficulty: <span className={difficulty}>{difficulty}</span>
+          Word Difficulty:{" "}
+          <span className={styles[difficulty]}>{difficulty}</span>
         </h3>
       </div>
     </div>

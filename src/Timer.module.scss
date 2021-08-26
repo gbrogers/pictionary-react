@@ -1,0 +1,14 @@
+.timer {
+  display: flex;
+  background-color: lawngreen;
+  height: 50px;
+  align-items: center;
+
+  button {
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+.counting {
+  color: hotpink;
+}
